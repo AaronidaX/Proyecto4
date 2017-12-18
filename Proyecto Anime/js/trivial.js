@@ -11,7 +11,7 @@ var preguntas = [																			// Pregunta Respuesta
 	['¿Kurosaki Ichigo es un hollow?', 'Si'],
 	['¿Cómo se llama la Zanpaku-tō de Ichigo?', 'Zangetsu'],
 	['¿Cómo se llama el Planeta de los Saiyan?', 'Planeta Vegeta'],                            // ...
-	['¿Cómo consigue Vegeta trasnformarse en Super Saiyan?', 'Por la frustración']						// [9][0] y [9][1]
+	['¿Cómo consigue Vegeta transformarse en Super Saiyan?', 'Por la frustración']						// [9][0] y [9][1]
 ],
 pregunta, respuesta,
 formuladas = 0,
@@ -34,6 +34,7 @@ function inicializar() {
 	p = document.getElementById("preg");
 	p.addEventListener("mouseover", reaccionarAnteElRatonPorEncima);
 	p.addEventListener("mouseout", reaccionarAlSalir);
+
 
 	/*
 	Se programa que al pulsarse el botón "Siguiente Pregunta" se compruebe si se ha acertado la pregunta, en cuyo caso, se incrementa en una unidad 'acertadas'.

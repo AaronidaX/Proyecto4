@@ -40,6 +40,13 @@ body {
     text-shadow: 1px 1px 0 white, -1px -1px white, 1px -1px white, -1px 1px white, 0 1px white, 1px 0 white, -1px 0 white, 0 -1px white, 5px 5px 6px #aaa;
 }
 
+.bordito2 {
+    color: black;
+    margin: 30px 0;
+    font-size: 50px;
+    text-shadow: 1px 1px 0 white, -1px -1px white, 1px -1px white, -1px 1px white, 0 1px white, 1px 0 white, -1px 0 white, 0 -1px white, 5px 5px 6px #aaa;
+}
+
 .container.gallery-container {
     background-color: #fff;
     color: #35373a;
@@ -186,4 +193,12 @@ body {
 }
 .esquinas {
     border-radius: 10px 10px 10px 10px;
+}
+
+.small {
+    line-height: 200%;
+}
+
+.container-fluid {
+  padding-right: 0px; padding-left: 0px;
 }
