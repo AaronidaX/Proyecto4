@@ -29,11 +29,65 @@ function fondo() {
 	}
 }
 
+// Lista de canciones para el reproductor en Array
+
+var canciones = [
+  {
+    nombre: "Gradus Vita",
+    autor: "Hellsing",
+    archivo: "music/hellsing-gradus-vita.mp3"
+  },
+  {
+    nombre: "Luffy vs Cocodrile",
+    autor: "One Piece",
+    archivo: "music/luffy-vs-cocodrile.mp3"
+  },
+  {
+    nombre: "Terror",
+    autor: "Dragon Ball Super",
+    archivo: "music/dragon-ball-super-terror.mp3"
+  },
+  {
+    nombre: "Ascended Super Saiyan",
+    autor: "Dragon Ball Z",
+    archivo: "music/dragon-ball-z-ascended-super-saiyan.mp3"
+  },
+  {
+    nombre: "Cell Battles",
+    autor: "Dragon Ball Z",
+    archivo: "music/dragon-ball-z-cell-battles.mp3"
+  },
+  {
+    nombre: "The Power Of Goku",
+    autor: "Dragon Ball Z",
+    archivo: "music/dragon-ball-z-the-power-of-goku.mp3"
+  },
+  {
+    nombre: "The Cyborg Fights",
+    autor: "One Punch Man",
+    archivo: "music/the-cyborg-fights.mp3"
+  },
+  {
+    nombre: "The Devil Fights",
+    autor: "Hataraku-Mao-Sama",
+    archivo: "music/hataraku-mao-sama.mp3"
+  },
+  {
+    nombre: "Priest's Pride Before The Fall",
+    autor: "Hellsing",
+    archivo: "music/priests-pride-before-the-fall.mp3"
+  }
+]
+
 function inicializar() {
+	mostrarcanciones();
+  var todasLasCanciones = document.getElementsByClassName("cancion");
+  for (var i = 0; i < todasLasCanciones.length; i++) {
+    todasLasCanciones[i].addEventListener("click", cambiarCancion);
+  }
 	p = document.getElementById("preg");
 	p.addEventListener("mouseover", reaccionarAnteElRatonPorEncima);
 	p.addEventListener("mouseout", reaccionarAlSalir);
-
 
 
 	/*
@@ -110,13 +164,19 @@ function numAleat(min, max){
 	return Math.floor( Math.random() * (max - min + 1) ) + min;
 }
 
-function pulsar() {
-	var dato = event.target;
-	if(dato.value == "") {
-		event.preventDefault();
-		document.getElementById("intro").style.display = "block";
-	} else if(dato.value != "") {
-		event.preventDefault();
-		document.getElementById("intro").style.display = "none";
-	}
+function cambiarCancion(event) {
+var cancionSeleccionada = event.target;
+document.getElementById("cancion").src = canciones[cancionSeleccionada.value].archivo;
+document.getElementById("audio").load();
+}
+
+function mostrarcanciones() {
+  var listaDeCanciones = document.getElementById("lista-de-canciones");
+  for(var i = 0; i < canciones.length; i++){
+      listaDeCanciones.innerHTML += '<li class="list-group-item cancion" value="'+ i +'">' + canciones[i].nombre + '</li>';
+  }
+}
+
+function reiniciar() {
+	window.location.reload(true);
 }

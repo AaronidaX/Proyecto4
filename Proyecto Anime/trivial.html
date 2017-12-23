@@ -72,15 +72,26 @@
 			</div>
 		</nav>
 		<div id="Trivial" class="container-fluid">
-			<h2 class="bordito2 centrar" id="preg"></h2>
-			<input class="center-block" type="text" id="dato">
-			<span class="centrar" id="intro">¡Al menos inténtalo!</span>
-			<button class="center-block" id="boton">Siguiente Pregunta</button>
-			<p class="bordito2 centrar" id="resolucion"></p>
-			<img src="img/animes.jpg" alt="animes" class="img-responsive esquinas">
-		</div>
-		<div id="CambiarFondo" class="container-fluid">
-			<button class="btn nada center-block" onclick="fondo()"><img class="peque" src="img/change.png" alt="change"></button>
-			<p class="centrar bordito2">Dale al botón de arriba si deseas cambiar el fondo</p>
-		</div>
-	</body>
+			<ul class="list-group" id="lista-de-canciones">
+				<!-- Aqui van las canciones -->
+
+			</ul>
+
+				<audio controls id="audio">
+					<source id="cancion" src="audio/the-cyborg-fights.mp3" type="audio/mpeg">
+						Your browser does not support the audio tag.
+					</audio>
+
+				<h2 class="bordito2 centrar" id="preg"></h2>
+				<input class="center-block" type="text" id="dato">
+				<span class="centrar" id="intro">¡Al menos inténtalo!</span>
+				<button class="center-block" id="boton">Siguiente Pregunta</button>
+				<button class="center-block" onclick="reiniciar()">Reiniciar</button>
+				<p class="bordito2 centrar" id="resolucion"></p>
+				<img src="img/animes.jpg" alt="animes" class="img-responsive esquinas">
+			</div>
+			<div id="CambiarFondo" class="container-fluid">
+				<button class="btn nada center-block" onclick="fondo()"><img class="peque" src="img/change.png" alt="change"></button>
+				<p class="centrar bordito2">Dale al botón de arriba si deseas cambiar el fondo</p>
+			</div>
+		</body>
